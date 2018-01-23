@@ -52,7 +52,7 @@ const FormGroup = props => {
   const children = React.Children.map(props.children, child => {
     let subsetOfProps = {}
     if (child.props.componentName === 'Input') {
-      const inputPropTypes = Object.keys(child.type.PropTypes)
+      const inputPropTypes = Object.keys(child.type.propTypes)
       subsetOfProps = _.pick(props, inputPropTypes);
     }
 
@@ -62,14 +62,14 @@ const FormGroup = props => {
   })
 
   return (
-    <FormGroupWrapper border={border} error={error} inlineLabel={inlineLabel}
-      multiline={multiline} numberOfLines={numberOfLines} theme={theme}>
+    <FormGroupWrapper border={border?1:0} error={error?1:0} inlineLabel={inlineLabel}
+      multiline={multiline?1:0} numberOfLines={numberOfLines} theme={theme}>
       { children }
     </FormGroupWrapper>
   )
 }
 
-FormGroup.PropTypes = {
+FormGroup.propTypes = {
   border: PropTypes.bool,
   error: PropTypes.bool,
 }

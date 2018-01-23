@@ -38,7 +38,7 @@ const Fieldset = props => {
   const { children, label, last, theme } = props
 
   return (
-    <FieldsetWrapper last={last} theme={theme}>
+    <FieldsetWrapper last={last?1:0} theme={theme}>
       { /* text-transform is for some reason not supported in react native https://github.com/facebook/react-native/issues/2088 */ }
       { label && <FieldsetLabel>{ label.toUpperCase() }</FieldsetLabel> }
       <FieldsetFormWrapper>
@@ -48,7 +48,7 @@ const Fieldset = props => {
   )
 }
 
-Fieldset.PropTypes = {
+Fieldset.propTypes = {
   last: PropTypes.bool,
   label: PropTypes.string
 }

@@ -21,7 +21,7 @@ const render = renderComponent => props => {
 
   return (
     <View>
-      <FormGroup border={border} inlineLabel={inlineLabel} theme={theme} error={touched && !!error} {...props} >
+      <FormGroup border={border?1:0} inlineLabel={inlineLabel} theme={theme} error={touched && !!error} {...props} >
         <Label theme={theme}>{ label }</Label>
         { renderComponent(props) }
       </FormGroup>
@@ -42,7 +42,7 @@ const createInputCreator = ReduxFormFieldComponent => (name, renderFunction, Pro
   }
 
   FieldWrapper.displayName = 'FieldWrapper'
-  FieldWrapper.PropTypes = Object.assign({
+  FieldWrapper.propTypes = Object.assign({
     border: PropTypes.bool,
     inlineLabel: PropTypes.bool,
     label: PropTypes.string.isRequired,

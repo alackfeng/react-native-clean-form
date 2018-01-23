@@ -81,13 +81,13 @@ class Input extends React.Component {
   }
 }
 
-Input.PropTypes = {
+Input.propTypes = {
   ...TextInput.propTypes,
   inlineLabel: PropTypes.bool.isRequired
 }
 
 Input.defaultProps = {
-  componentName: 'Input',
+  componentName: 'TextInput',
   inlineLabel: true,
   theme: defaultTheme
 }

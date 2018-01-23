@@ -25,7 +25,7 @@ LabelText.defaultProps = {
 
 const Label = props => {
   const { children, inlineLabel, theme } = props
-
+  console.log("sssssss-  ", inlineLabel);
   return (
     <LabelWrapper inlineLabel={inlineLabel} theme={theme}>
       <LabelText inlineLabel={inlineLabel} theme={theme} >{ children }</LabelText>
@@ -33,7 +33,7 @@ const Label = props => {
   )
 }
 
-Label.PropTypes = {
+Label.propTypes = {
   children: PropTypes.string.isRequired
 }
 
